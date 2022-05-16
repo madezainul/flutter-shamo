@@ -33,7 +33,7 @@ class _MainPageState extends State<MainPage> {
         ),
         child: BottomAppBar(
           shape: CircularNotchedRectangle(),
-          notchMargin: 10,
+          notchMargin: 12,
           clipBehavior: Clip.antiAlias,
           child: BottomNavigationBar(
             backgroundColor: backgroundColor4,
@@ -47,32 +47,56 @@ class _MainPageState extends State<MainPage> {
             type: BottomNavigationBarType.fixed,
             items: [
               BottomNavigationBarItem(
-                icon: Image.asset(
-                  'assets/icon_home.png',
-                  width: 21,
-                  color: currentIndex == 0 ? primaryColor : Color(0xff808191),
+                icon: Container(
+                  margin: EdgeInsets.only(
+                    top: 20,
+                    bottom: 10,
+                  ),
+                  child: Image.asset(
+                    'assets/icon_home.png',
+                    width: 21,
+                    color: currentIndex == 0 ? primaryColor : Color(0xff808191),
+                  ),
                 ),
                 label: '',
               ),
               BottomNavigationBarItem(
-                icon: Image.asset('assets/icon_chat.png',
-                    width: 20,
-                    color:
-                        currentIndex == 1 ? primaryColor : Color(0xff808191)),
+                icon: Container(
+                  margin: EdgeInsets.only(
+                    top: 20,
+                    bottom: 10,
+                  ),
+                  child: Image.asset('assets/icon_chat.png',
+                      width: 20,
+                      color:
+                          currentIndex == 1 ? primaryColor : Color(0xff808191)),
+                ),
                 label: '',
               ),
               BottomNavigationBarItem(
-                icon: Image.asset('assets/icon_wishlist.png',
-                    width: 20,
-                    color:
-                        currentIndex == 2 ? primaryColor : Color(0xff808191)),
+                icon: Container(
+                  margin: EdgeInsets.only(
+                    top: 20,
+                    bottom: 10,
+                  ),
+                  child: Image.asset('assets/icon_wishlist.png',
+                      width: 20,
+                      color:
+                          currentIndex == 2 ? primaryColor : Color(0xff808191)),
+                ),
                 label: '',
               ),
               BottomNavigationBarItem(
-                icon: Image.asset('assets/icon_profile.png',
-                    width: 18,
-                    color:
-                        currentIndex == 3 ? primaryColor : Color(0xff808191)),
+                icon: Container(
+                  margin: EdgeInsets.only(
+                    top: 20,
+                    bottom: 10,
+                  ),
+                  child: Image.asset('assets/icon_profile.png',
+                      width: 18,
+                      color:
+                          currentIndex == 3 ? primaryColor : Color(0xff808191)),
+                ),
                 label: '',
               ),
             ],
@@ -81,32 +105,31 @@ class _MainPageState extends State<MainPage> {
       );
     }
 
-    // Widget body() {
-    //   switch (currentIndex) {
-    //     case 0:
-    //       return HomePage();
-    //       break;
-    //     case 1:
-    //       return ChatPage();
-    //       break;
-    //     case 2:
-    //       return WishlistPage();
-    //       break;
-    //     case 3:
-    //       return ProfilePage();
-    //       break;
-    //     default:
-    //   }
-    // }
+    Widget body() {
+      switch (currentIndex) {
+        case 0:
+          return HomePage();
+          break;
+        case 1:
+          return ChatPage();
+          break;
+        case 2:
+          return WishlistPage();
+          break;
+        case 3:
+          return ProfilePage();
+          break;
+        default:
+          return HomePage();
+      }
+    }
 
     return Scaffold(
       backgroundColor: backgroundColor1,
       floatingActionButton: cartButton(),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: customBottomNav(),
-      body: Center(
-        child: Text('Main Page'),
-      ),
+      body: body(),
     );
   }
 }

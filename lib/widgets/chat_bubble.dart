@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:shamo/theme.dart';
 
 class ChatBubble extends StatelessWidget {
-  String text;
-  bool isSender;
+  final String text;
+  final bool isSender;
 
   ChatBubble({this.isSender = false, this.text = ''});
 
@@ -11,8 +12,10 @@ class ChatBubble extends StatelessWidget {
   Widget build(BuildContext context) {
     Widget productPreview() {
       return Container(
+        constraints: BoxConstraints(
+          maxWidth: MediaQuery.of(context).size.width * 0.6,
+        ),
         width: 230,
-        height: 155,
         margin: EdgeInsets.only(bottom: 12),
         padding: EdgeInsets.all(12),
         decoration: BoxDecoration(
@@ -41,14 +44,63 @@ class ChatBubble extends StatelessWidget {
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
                         'COURT VISION 2.0 SHOES',
                         style: primaryTextStyle,
                         overflow: TextOverflow.ellipsis,
                       ),
+                      SizedBox(
+                        height: 4,
+                      ),
+                      Text(
+                        '\$57,15',
+                        style: priceTextStyle.copyWith(
+                          fontWeight: medium,
+                        ),
+                      ),
                     ],
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Row(
+              children: [
+                OutlinedButton(
+                  onPressed: () {},
+                  style: OutlinedButton.styleFrom(
+                    side: BorderSide(
+                      color: primaryColor,
+                    ),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                  ),
+                  child: Text(
+                    'Add to Cart',
+                    style: purpleTextStyle,
+                  ),
+                ),
+                SizedBox(
+                  width: 8,
+                ),
+                TextButton(
+                  onPressed: () {},
+                  style: TextButton.styleFrom(
+                    backgroundColor: primaryColor,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                  ),
+                  child: Text(
+                    'Buy Now',
+                    style: GoogleFonts.poppins(
+                      color: backgroundColor5,
+                      fontWeight: medium,
+                    ),
                   ),
                 ),
               ],

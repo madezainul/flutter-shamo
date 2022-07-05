@@ -1,6 +1,22 @@
-# shamo
+# Shoes Marketplace Project 2022.
 
-A new Flutter project.
+Project Flutter menggunakan Google UI toolkit untuk tampilan yang lebih menarik dan dinamis. Penggunaan bahasa adalah Dart.
+
+<p>
+<img src="https://user-images.githubusercontent.com/100096029/177204730-f8ec0df7-f196-4e9b-b483-4b559bc063e5.png" alt="Contoh tampilan" width="200">
+<img src="https://user-images.githubusercontent.com/100096029/177204906-eb6d68e8-abe3-4cf5-8cbb-0fe671095275.png" alt="Contoh tampilan" width="200">
+<img src="https://user-images.githubusercontent.com/100096029/177205076-d5b4cb19-8039-4191-baba-4366543e7376.png" alt="Contoh tampilan" height="695">
+<img src="https://user-images.githubusercontent.com/100096029/177205025-c50d7915-80ee-4888-b1d3-1a75b053c4d8.png" alt="Contoh tampilan" height="695">
+</p>
+
+## Contents
+
+- [Business](#business)
+- [Finance](#finance)
+- [Shopping](#shopping)
+- [Lifestyle](#lifestyle)
+- [Health and Fitness](#health-and-fitness)
+- [Personalization](#personalization)
 
 ## Getting Started
 

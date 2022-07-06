@@ -5,16 +5,18 @@ import 'package:shamo/theme.dart';
 class ChatBubble extends StatelessWidget {
   final String text;
   final bool isSender;
+  final bool hasProduct;
 
-  ChatBubble({this.isSender = false, this.text = ''});
+  ChatBubble({
+    this.isSender = false,
+    this.text = '',
+    this.hasProduct = false,
+  });
 
   @override
   Widget build(BuildContext context) {
     Widget productPreview() {
       return Container(
-        constraints: BoxConstraints(
-          maxWidth: MediaQuery.of(context).size.width * 0.6,
-        ),
         width: 230,
         margin: EdgeInsets.only(bottom: 12),
         padding: EdgeInsets.all(12),
@@ -48,13 +50,12 @@ class ChatBubble extends StatelessWidget {
                       Text(
                         'COURT VISION 2.0 SHOES',
                         style: primaryTextStyle,
-                        overflow: TextOverflow.ellipsis,
                       ),
                       SizedBox(
                         height: 4,
                       ),
                       Text(
-                        '\$57,15',
+                        '\$57.15',
                         style: priceTextStyle.copyWith(
                           fontWeight: medium,
                         ),
@@ -117,7 +118,7 @@ class ChatBubble extends StatelessWidget {
         crossAxisAlignment:
             isSender ? CrossAxisAlignment.end : CrossAxisAlignment.start,
         children: [
-          productPreview(),
+          hasProduct ? productPreview() : SizedBox(),
           Row(
             mainAxisAlignment:
                 isSender ? MainAxisAlignment.end : MainAxisAlignment.start,
@@ -125,7 +126,7 @@ class ChatBubble extends StatelessWidget {
               Flexible(
                 child: Container(
                   constraints: BoxConstraints(
-                    maxWidth: MediaQuery.of(context).size.width * 0.6,
+                    maxWidth: MediaQuery.of(context).size.width * 0.65,
                   ),
                   padding: EdgeInsets.symmetric(
                     horizontal: 16,
